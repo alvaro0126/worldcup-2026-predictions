@@ -2,9 +2,8 @@
 
 Each completed match is scored against the **pre-tournament** Elo prior (the
 model *before* it saw that result), so this is an honest hold-out check rather
-than an in-sample fit.  We report the same headline numbers El País uses:
-outcome hit-rate and the Ranked Probability Score (RPS; lower is better, their
-model sits around 0.17-0.18).
+than an in-sample fit.  We report outcome hit-rate and the Ranked Probability
+Score (RPS; lower is better, good tournament forecasts sit around 0.17-0.18).
 """
 from __future__ import annotations
 from dataclasses import dataclass

@@ -24,7 +24,7 @@ def main() -> None:
                     help="number of Monte-Carlo tournament simulations")
     ap.add_argument("--seed", type=int, default=config.RANDOM_SEED)
     ap.add_argument("--recalibrate", action="store_true",
-                    help="re-fit (alpha,b,rho) to the El Pais anchors before running")
+                    help="re-fit (alpha,b,rho) to the benchmark anchors before running")
     ap.add_argument("--no-fetch", action="store_true",
                     help="skip pulling the latest results from Wikipedia")
     args = ap.parse_args()

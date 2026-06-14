@@ -341,9 +341,9 @@ def _method_section(params: Params, val: Validation) -> str:
     even = predict_from_elo(config.ELO_REF, config.ELO_REF, False, False, params)
     steps = [
         ("Strength", "One rating per team",
-         "Each side's strength starts from its World Football Elo (eloratings.net), the metric used by both El País and The Economist. Teams outside the top tier blend Elo with the FIFA ranking and El País's nivel, so no single noisy source decides a team."),
+         "Each side's strength starts from its World Football Elo (eloratings.net), the standard results-based measure of national-team form. Teams outside the top tier blend Elo with the FIFA ranking and a composite expert rating, so no single noisy source decides a team."),
         ("Match engine", "Dixon-Coles Poisson",
-         "Goals follow a Poisson law; expected goals come from the Elo gap, with the Dixon-Coles correction fixing low-score and draw probabilities. Hosts get an edge at home. The engine is calibrated to El País's published numbers."),
+         "Goals follow a Poisson law; expected goals come from the Elo gap, with the Dixon-Coles correction fixing low-score and draw probabilities. Hosts get an edge at home. The engine is calibrated to realistic benchmark probabilities."),
         ("Bayesian update", "Results move the model",
          "Every finished match nudges a team's attack and defence, shrunk toward its Elo prior. Germany's 7-1 over Curaçao lifted them only a little, because thrashing a weak side proves less than the scoreline suggests. Live games wait until full time."),
         ("Simulation", "50,000 tournaments",
@@ -356,10 +356,10 @@ def _method_section(params: Params, val: Validation) -> str:
     return f"""
 <section id="method"><div class="wrap reveal">
   <div class="sec-head"><span class="n">02</span><h2>How the model works</h2></div>
-  <p class="dek">A sound, reproducible pipeline, not a hunch. It mirrors the two newspaper models it was built from, and is checked against the games already played.</p>
+  <p class="dek">A sound, reproducible pipeline, not a hunch, checked against the games already played.</p>
   <div class="steps">{sh}</div>
-  <div class="anchors"><table><caption>Calibrated to El País's published anchors</caption>
-    <tr><th>Test</th><th>El País target</th><th class="r">This model</th></tr>
+  <div class="anchors"><table><caption>Calibration benchmarks</caption>
+    <tr><th>Test</th><th>Target</th><th class="r">This model</th></tr>
     <tr><td>Even game, draw rate</td><td>27%</td><td class="r num">{even.p_draw*100:.0f}%</td></tr>
     <tr><td>Spain vs Germany, neutral (W / D / L)</td><td>52 / 27 / 21</td><td class="r num">{anc.p_home*100:.0f} / {anc.p_draw*100:.0f} / {anc.p_away*100:.0f}</td></tr>
     <tr><td>Hold-out check on games played so far (RPS)</td><td>~0.17 to 0.18</td><td class="r num">{val.mean_rps:.3f}</td></tr>
@@ -495,8 +495,8 @@ def _caveats_colophon(val: Validation, generated: str, agg: SimAgg) -> str:
     cav = [
         ("It is built to be unpredictable", "Five single-elimination rounds, a goal that can decide everything: even the strongest side rarely strings it all together. Read these as probabilities, not promises."),
         ("Knockouts are projections", "The draw depends on how the groups finish. Each knockout score assumes the most-likely pairing, which often sits well below 50%. Re-run once the groups are decided."),
-        ("Squad value is approximated", "El País weights Transfermarkt market values directly; here that signal is carried through Elo, which nudges star-studded squads like France and Brazil slightly down versus their model."),
-        ("Honest about its record", f"On the {val.n} games played so far it has called {val.outcome_hit_rate:.0%} of results, at a Ranked Probability Score of {val.mean_rps:.3f}, the same range El País reports. Good, not clairvoyant."),
+        ("Squad value is approximated", "Squad market value is carried through Elo rather than used as a separate input, which nudges star-studded squads like France and Brazil slightly down."),
+        ("Honest about its record", f"On the {val.n} games played so far it has called {val.outcome_hit_rate:.0%} of results, at a Ranked Probability Score of {val.mean_rps:.3f}, a respectable mark for tournament forecasting. Good, not clairvoyant."),
     ]
     cv = "".join(f'<div class="caveat"><h3>{_e(t)}</h3><p>{_e(b)}</p></div>' for t, b in cav)
     return f"""
@@ -506,8 +506,8 @@ def _caveats_colophon(val: Validation, generated: str, agg: SimAgg) -> str:
 </div></section>
 <footer><div class="wrap colophon reveal">
   <div class="big">World Cup 2026, a statistical forecast.</div>
-  <p>Updated {generated}. A Dixon-Coles bivariate-Poisson model with a Bayesian update on results, run over {agg.n:,} simulations. Built on the methodology of El País's "¿Quién ganará el Mundial?" and The Economist's "How to win the World Cup".</p>
-  <p>Strength data: eloratings.net, metisfootball.com, FIFA ranking, El País nivel. Fixtures and results: Wikipedia 2026 FIFA World Cup pages. This page regenerates from the model on every run, so it stays current as matches are played.</p>
+  <p>Updated {generated}. A Dixon-Coles bivariate-Poisson model with a Bayesian update on results, run over {agg.n:,} simulations.</p>
+  <p>Strength data: eloratings.net, metisfootball.com, FIFA ranking, and a composite expert rating. Fixtures and results: Wikipedia 2026 FIFA World Cup pages. This page regenerates from the model on every run, so it stays current as matches are played.</p>
   <p style="margin-top:14px">Not affiliated with FIFA. For interest, not betting.</p>
 </div></footer>"""
 
@@ -527,7 +527,7 @@ def build(path, bm: BayesModel, teams: dict[str, Team], fixtures: list[Match],
     <div><div class="k">Favourite</div><div class="v">{_e(top_team)}</div><div class="s num">{top_pct:.1f}% to win it</div></div>
     <div><div class="k">Simulations</div><div class="v num">{n//1000}k</div><div class="s">whole tournaments</div></div>
     <div><div class="k">Games played</div><div class="v num">{n_final}</div><div class="s">feeding the update</div></div>
-    <div><div class="k">Hold-out RPS</div><div class="v num">{val.mean_rps:.3f}</div><div class="s">El País ~0.17 to 0.18</div></div>
+    <div><div class="k">Hold-out RPS</div><div class="v num">{val.mean_rps:.3f}</div><div class="s">lower is better</div></div>
   </div>"""
 
     head = f"""<!doctype html>
@@ -538,7 +538,7 @@ def build(path, bm: BayesModel, teams: dict[str, Team], fixtures: list[Match],
 <meta name="description" content="A Dixon-Coles Poisson model with a daily Bayesian update recommends a score for all 104 World Cup 2026 matches. {_e(top_team)} are the {top_pct:.1f}% favourites.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="World Cup 2026, a statistical forecast">
-<meta property="og:description" content="Recommended scores for all 104 matches, from a model calibrated to El País and The Economist. {_e(top_team)} lead at {top_pct:.1f}%.">
+<meta property="og:description" content="Recommended scores for all 104 World Cup 2026 matches from a calibrated statistical model. {_e(top_team)} lead at {top_pct:.1f}%.">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..600&family=Inter:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>{CSS}</style>
@@ -549,7 +549,7 @@ def build(path, bm: BayesModel, teams: dict[str, Team], fixtures: list[Match],
 <header class="masthead"><div class="wrap">
   <div class="kicker">A statistical forecast &middot; updated {generated}</div>
   <h1>Who wins the 2026 World Cup?</h1>
-  <p class="standfirst">A model trained the way El País and The Economist build theirs: rate every team, simulate the whole tournament <b>{n:,} times</b>, and read off the odds. It backs <b>{_e(top_team)}</b>, and recommends a score for all 104 matches. It also updates itself as the results come in.</p>
+  <p class="standfirst">A statistical model: rate every team, simulate the whole tournament <b>{n:,} times</b>, and read off the odds. It backs <b>{_e(top_team)}</b>, and recommends a score for all 104 matches. It also updates itself as the results come in.</p>
   {strip}
 </div></header>
 """

@@ -4,10 +4,9 @@ A sound, reproducible statistical model that recommends **one exact score for ev
 one of the 104 matches** of the 2026 FIFA World Cup, and **updates itself daily** as
 results come in.
 
-Built to mirror the methodology of two reference pieces (both supplied as the brief):
-EL PAÍS's tournament model ("¿Quién ganará el Mundial?") and The Economist's
-"How to win the World Cup" — both of which use **World Football Elo** as the core
-strength metric and a **Dixon-Coles Poisson** match engine.
+Built around **World Football Elo** as the core strength metric and a
+**Dixon-Coles Poisson** match engine, calibrated to well-established benchmark
+match probabilities and simulated 50,000 times.
 
 ---
 
@@ -45,21 +44,21 @@ results, "broadsheet almanac" design, light + dark). Regenerated every run.
 ## The model (why it is sound)
 
 **1. Team strength — multi-source, on one scale.**
-World Football **Elo** (eloratings.net) is the canonical metric both source articles
-rely on. The 18 strongest teams use their eloratings.net value directly; every other
+World Football **Elo** (eloratings.net) is the canonical strength metric. The 18
+strongest teams use their eloratings.net value directly; every other
 team is the average of whatever independent signals it has, each first mapped onto the
-eloratings scale by regression: **Metis-model Elo + FIFA world ranking + El País
-"nivel"**. Blending beats any single source (e.g. Metis alone badly underrates the USA;
+eloratings scale by regression: **Metis-model Elo + FIFA world ranking + a composite
+expert rating**. Blending beats any single source (e.g. Metis alone badly underrates the USA;
 the FIFA ranking corrects it). Each team's `Elo source` is recorded for transparency.
 
 **2. Match engine — Dixon-Coles bivariate Poisson.**
 Goals follow a Poisson law; expected goals come from the Elo difference (plus host
 advantage for the three host nations in their own country). The **Dixon-Coles (1997)**
 correction fixes the low-score / draw probabilities. The three free parameters are
-**calibrated to El País's published anchors** so the engine reproduces a forecaster
-that has beaten Goldman Sachs, UBS and the betting markets:
+**calibrated to benchmark match probabilities** so the engine stays realistic
+without fitting on the handful of matches played so far:
 
-| Check | Target (El País) | This model |
+| Check | Target | This model |
 |---|---|---|
 | Even game | ~2.55 goals, ~27% draws | 2.55 goals, 36/28/36 |
 | Spain v Germany (neutral) | 52 / 27 / 21 | 53 / 25 / 22 |
@@ -95,7 +94,7 @@ pip install -r requirements.txt
 python run.py                 # fetch latest results + full 50k-sim run
 python run.py --no-fetch      # skip the network fetch, run on current results.csv
 python run.py --sims 10000    # faster
-python run.py --recalibrate   # re-fit the El País anchors first
+python run.py --recalibrate   # re-fit the benchmark anchors first
 ```
 
 Every run also writes a copy of the picks to your **Desktop**
@@ -140,7 +139,7 @@ python -m src.fetch_results --dry-run   # preview what the fetcher would change
 
 | File | What | Source |
 |---|---|---|
-| `data/ratings.csv` | 48 teams: group, Elo (eloratings + Metis), FIFA rank, nivel | eloratings.net, metisfootball.com, FIFA seeding, El País |
+| `data/ratings.csv` | 48 teams: group, Elo (eloratings + Metis), FIFA rank, expert rating | eloratings.net, metisfootball.com, FIFA seeding, expert composite |
 | `data/fixtures.csv` | 72 group fixtures with dates, venues, host flags | Wikipedia per-group pages |
 | `data/results.csv` | Results so far (status final / in_progress) | Wikipedia / FIFA standings |
 | `data/calibration.json` | Fitted (alpha, b, rho) | produced by `calibrate.py` |
@@ -155,9 +154,9 @@ python -m src.fetch_results --dry-run   # preview what the fetcher would change
   win or finish second in its group. Re-run after the group stage to lock real matchups.
 - Knockouts are treated as **neutral venue** (host advantage is modelled only in the
   group stage, where venues are known).
-- **Squad value** (Transfermarkt), which El País weights directly, is proxied here via
-  Elo. That lifts star-squad sides (France, Brazil, Portugal) a little in their model
-  relative to this Elo-driven one — the main reason our title odds differ slightly.
+- **Squad value** (Transfermarkt) is proxied here via Elo rather than used as a
+  separate input. That nudges star-squad sides (France, Brazil, Portugal) slightly
+  versus a value-weighted model.
 
 ## Layout
 

@@ -27,7 +27,7 @@ class Team:
     elo_source: str            # "eloratings.net" or "metis->bridged"
     elo_metis: Optional[float]
     fifa_rank: Optional[int]
-    nivel: Optional[float]     # El País composite "nivel" (cross-check only)
+    expert_rating: Optional[float]   # composite expert strength rating (cross-check only)
 
 
 @dataclass(frozen=True)
@@ -77,7 +77,7 @@ def _blend_elo(df: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
     eloratings scale by a regression fit on the teams that have both:
         * Metis-model Elo,
         * FIFA world ranking (via log-rank), and
-        * El País "nivel".
+        * a composite expert rating.
     Blending several sources is far more robust than trusting any single one
     (e.g. Metis alone badly underrates the USA; FIFA rank corrects it).
     """
@@ -88,8 +88,8 @@ def _blend_elo(df: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
     r = base.dropna(subset=["fifa_rank"])
     a_r, b_r = _fit_line(np.log(r["fifa_rank"].to_numpy(float)),
                          r["elo_eloratings"].to_numpy(float))
-    nv = base.dropna(subset=["elp_nivel"])
-    a_n, b_n = _fit_line(nv["elp_nivel"].to_numpy(float),
+    nv = base.dropna(subset=["expert_rating"])
+    a_n, b_n = _fit_line(nv["expert_rating"].to_numpy(float),
                          nv["elo_eloratings"].to_numpy(float))
 
     def blend(row) -> tuple[float, str]:
@@ -100,8 +100,8 @@ def _blend_elo(df: pd.DataFrame) -> tuple[pd.Series, pd.Series]:
             ests.append(a_m + b_m * row["elo_metis"]); srcs.append("metis")
         if not pd.isna(row["fifa_rank"]):
             ests.append(a_r + b_r * np.log(row["fifa_rank"])); srcs.append("fifa")
-        if not pd.isna(row["elp_nivel"]):
-            ests.append(a_n + b_n * row["elp_nivel"]); srcs.append("nivel")
+        if not pd.isna(row["expert_rating"]):
+            ests.append(a_n + b_n * row["expert_rating"]); srcs.append("expert")
         return float(np.mean(ests)), "blend(" + "+".join(srcs) + ")"
 
     blended = df.apply(blend, axis=1)
@@ -124,7 +124,7 @@ def load_teams() -> dict[str, Team]:
             elo_source=r["elo_source"],
             elo_metis=None if pd.isna(r["elo_metis"]) else float(r["elo_metis"]),
             fifa_rank=None if pd.isna(r["fifa_rank"]) else int(r["fifa_rank"]),
-            nivel=None if pd.isna(r["elp_nivel"]) else float(r["elp_nivel"]),
+            expert_rating=None if pd.isna(r["expert_rating"]) else float(r["expert_rating"]),
         )
     if len(teams) != 48:
         raise ValueError(f"expected 48 teams, got {len(teams)}")

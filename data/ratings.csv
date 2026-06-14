@@ -1,4 +1,4 @@
-team,group,confederation,host,elo_eloratings,elo_metis,fifa_rank,elp_nivel
+team,group,confederation,host,elo_eloratings,elo_metis,fifa_rank,expert_rating
 Spain,H,UEFA,FALSE,2157,1920,1,90
 Argentina,J,CONMEBOL,FALSE,2115,1890,2,88
 France,I,UEFA,FALSE,2063,1851,3,88

@@ -1,12 +1,11 @@
-"""Calibrate (alpha, b, rho) to EL PAÍS's published anchors.
+"""Calibrate (alpha, b, rho) to benchmark match probabilities.
 
 We choose the three match-model parameters so the engine reproduces:
   * an even game  -> ~2.55 total goals and ~27% draws,
   * Spain vs Germany on neutral ground -> 52% / 27% / 21% (W/D/L).
 
-These are the concrete numbers El País published for their GAM-Poisson model,
-so anchoring to them keeps us consistent with a forecaster that has beaten the
-big banks and the betting markets at the last two World Cups.
+Anchoring to these well-established benchmarks keeps the engine realistic
+without fitting it on the handful of matches played so far.
 """
 from __future__ import annotations
 import json

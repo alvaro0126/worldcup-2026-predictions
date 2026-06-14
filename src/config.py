@@ -35,10 +35,9 @@ RANDOM_SEED = 20260614    # reproducibility (tournament starts 2026-06-14 snapsh
 ELO_REF = 1850.0          # reference Elo (cancels out; keeps attack/defence centred)
 
 # --------------------------------------------------------------------------- #
-# Calibration targets — anchored to EL PAÍS's published model
+# Calibration targets — benchmark match probabilities the engine reproduces
 #   * Spain vs Germany on neutral ground -> 52% / 27% / 21% (W/D/L)
 #   * an even game -> draw probability ~27%, total goals ~2.55
-#   These come straight from the El País methodology section.
 # --------------------------------------------------------------------------- #
 CAL_EVEN_TOTAL_GOALS = 2.55
 CAL_EVEN_DRAW_PROB = 0.27
