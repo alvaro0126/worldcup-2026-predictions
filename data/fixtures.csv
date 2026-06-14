@@ -1,0 +1,73 @@
+match_id,round,group,date,home,away,venue,venue_country
+A1,Group,A,2026-06-11,Mexico,South Africa,Mexico City,MEX
+A2,Group,A,2026-06-11,South Korea,Czechia,Zapopan,MEX
+A4,Group,A,2026-06-18,Czechia,South Africa,Atlanta,USA
+A3,Group,A,2026-06-18,Mexico,South Korea,Zapopan,MEX
+A6,Group,A,2026-06-24,Czechia,Mexico,Mexico City,MEX
+A5,Group,A,2026-06-24,South Africa,South Korea,Guadalupe,MEX
+B1,Group,B,2026-06-12,Canada,Bosnia and Herzegovina,Toronto,CAN
+B2,Group,B,2026-06-13,Qatar,Switzerland,Santa Clara,USA
+B4,Group,B,2026-06-18,Switzerland,Bosnia and Herzegovina,Inglewood,USA
+B3,Group,B,2026-06-18,Canada,Qatar,Vancouver,CAN
+B6,Group,B,2026-06-24,Switzerland,Canada,Vancouver,CAN
+B5,Group,B,2026-06-24,Bosnia and Herzegovina,Qatar,Seattle,USA
+C1,Group,C,2026-06-13,Brazil,Morocco,East Rutherford,USA
+C2,Group,C,2026-06-13,Haiti,Scotland,Foxborough,USA
+C3,Group,C,2026-06-19,Scotland,Morocco,Foxborough,USA
+C4,Group,C,2026-06-19,Brazil,Haiti,Philadelphia,USA
+C6,Group,C,2026-06-24,Scotland,Brazil,Miami Gardens,USA
+C5,Group,C,2026-06-24,Morocco,Haiti,Atlanta,USA
+D1,Group,D,2026-06-12,United States,Paraguay,Inglewood,USA
+D2,Group,D,2026-06-13,Australia,Turkey,Vancouver,CAN
+D3,Group,D,2026-06-19,United States,Australia,Seattle,USA
+D4,Group,D,2026-06-19,Turkey,Paraguay,Santa Clara,USA
+D5,Group,D,2026-06-25,Turkey,United States,Inglewood,USA
+D6,Group,D,2026-06-25,Paraguay,Australia,Santa Clara,USA
+E1,Group,E,2026-06-14,Germany,Curaçao,Houston,USA
+E2,Group,E,2026-06-14,Ivory Coast,Ecuador,Philadelphia,USA
+E3,Group,E,2026-06-20,Germany,Ivory Coast,Toronto,CAN
+E4,Group,E,2026-06-20,Ecuador,Curaçao,Kansas City,USA
+E5,Group,E,2026-06-25,Curaçao,Ivory Coast,Philadelphia,USA
+E6,Group,E,2026-06-25,Ecuador,Germany,East Rutherford,USA
+F1,Group,F,2026-06-14,Netherlands,Japan,Arlington,USA
+F2,Group,F,2026-06-14,Sweden,Tunisia,Guadalupe,MEX
+F3,Group,F,2026-06-20,Netherlands,Sweden,Houston,USA
+F4,Group,F,2026-06-20,Tunisia,Japan,Guadalupe,MEX
+F5,Group,F,2026-06-25,Japan,Sweden,Arlington,USA
+F6,Group,F,2026-06-25,Tunisia,Netherlands,Kansas City,USA
+G1,Group,G,2026-06-15,Belgium,Egypt,Seattle,USA
+G2,Group,G,2026-06-15,Iran,New Zealand,Inglewood,USA
+G3,Group,G,2026-06-21,Belgium,Iran,Inglewood,USA
+G4,Group,G,2026-06-21,New Zealand,Egypt,Vancouver,CAN
+G5,Group,G,2026-06-26,Egypt,Iran,Seattle,USA
+G6,Group,G,2026-06-26,New Zealand,Belgium,Vancouver,CAN
+H1,Group,H,2026-06-15,Saudi Arabia,Uruguay,Miami Gardens,USA
+H2,Group,H,2026-06-15,Spain,Cape Verde,Atlanta,USA
+H3,Group,H,2026-06-21,Spain,Saudi Arabia,Atlanta,USA
+H4,Group,H,2026-06-21,Uruguay,Cape Verde,Miami Gardens,USA
+H5,Group,H,2026-06-26,Cape Verde,Saudi Arabia,Houston,USA
+H6,Group,H,2026-06-26,Uruguay,Spain,Zapopan,MEX
+I1,Group,I,2026-06-16,France,Senegal,East Rutherford,USA
+I2,Group,I,2026-06-16,Iraq,Norway,Foxborough,USA
+I3,Group,I,2026-06-22,France,Iraq,Philadelphia,USA
+I4,Group,I,2026-06-22,Norway,Senegal,East Rutherford,USA
+I5,Group,I,2026-06-26,Norway,France,Foxborough,USA
+I6,Group,I,2026-06-26,Senegal,Iraq,Toronto,CAN
+J1,Group,J,2026-06-16,Argentina,Algeria,Kansas City,USA
+J2,Group,J,2026-06-16,Austria,Jordan,Santa Clara,USA
+J3,Group,J,2026-06-22,Argentina,Austria,Arlington,USA
+J4,Group,J,2026-06-22,Jordan,Algeria,Santa Clara,USA
+J5,Group,J,2026-06-27,Algeria,Austria,Kansas City,USA
+J6,Group,J,2026-06-27,Jordan,Argentina,Arlington,USA
+K1,Group,K,2026-06-17,Portugal,DR Congo,Houston,USA
+K2,Group,K,2026-06-17,Uzbekistan,Colombia,Mexico City,MEX
+K3,Group,K,2026-06-23,Portugal,Uzbekistan,Houston,USA
+K4,Group,K,2026-06-23,Colombia,DR Congo,Zapopan,MEX
+K5,Group,K,2026-06-27,Colombia,Portugal,Miami Gardens,USA
+K6,Group,K,2026-06-27,DR Congo,Uzbekistan,Atlanta,USA
+L1,Group,L,2026-06-17,England,Croatia,Arlington,USA
+L2,Group,L,2026-06-17,Ghana,Panama,Toronto,CAN
+L3,Group,L,2026-06-23,England,Ghana,Foxborough,USA
+L4,Group,L,2026-06-23,Panama,Croatia,Toronto,CAN
+L5,Group,L,2026-06-27,Panama,England,East Rutherford,USA
+L6,Group,L,2026-06-27,Croatia,Ghana,Philadelphia,USA
