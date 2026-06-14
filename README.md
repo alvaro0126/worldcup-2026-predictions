@@ -29,6 +29,17 @@ strength metric and a **Dixon-Coles Poisson** match engine.
 `outputs/pool_picks.md` — a compact match → score sheet to feed **Claude-in-Chrome**
 for entering picks into an online prediction pool.
 
+`docs/index.html` — a self-contained, shareable web page (the model and all the
+results, "broadsheet almanac" design, light + dark). Regenerated every run.
+
+### Publishing the web page (GitHub Pages)
+
+1. Push the repo to GitHub.
+2. Repo **Settings → Pages → Build and deployment → Source: Deploy from a branch**,
+   then pick **branch `main`, folder `/docs`**, and save.
+3. The shareable URL is `https://<your-user>.github.io/<repo>/`. It refreshes
+   whenever you commit a regenerated `docs/index.html`.
+
 ---
 
 ## The model (why it is sound)

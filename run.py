@@ -15,7 +15,7 @@ import shutil
 from datetime import date
 
 from src import (config, data, calibrate, bayes, simulate, metrics,
-                 recommend, export_excel, export_md, fetch_results)
+                 recommend, export_excel, export_md, export_html, fetch_results)
 
 
 def main() -> None:
@@ -44,12 +44,16 @@ def main() -> None:
     agg = simulate.run(bm, teams, fixtures, results, n=args.sims, seed=args.seed)
 
     config.OUTPUTS.mkdir(exist_ok=True)
+    config.DOCS.mkdir(exist_ok=True)
     xlsx = config.OUTPUTS / "world_cup_2026_recommendations.xlsx"
     md = config.OUTPUTS / "pool_picks.md"
+    html_page = config.DOCS / "index.html"
+    generated = date.today().strftime("%-d %B %Y")
     export_excel.build(xlsx, bm, teams, fixtures, results, agg, params, val)
     export_md.build(md, recommend.group_recs(bm, fixtures, results),
                     recommend.knockout_recs(bm, agg), val,
                     date.today().isoformat(), agg.n)
+    export_html.build(html_page, bm, teams, fixtures, results, agg, params, val, generated)
 
     desktop_note = ""
     if config.DESKTOP.exists():
@@ -69,7 +73,7 @@ def main() -> None:
     for t, c in agg.champion.most_common(8):
         print(f"  {t:16s} {c/agg.n:5.1%}")
     print()
-    print(f"Wrote:\n  {xlsx}\n  {md}{desktop_note}")
+    print(f"Wrote:\n  {xlsx}\n  {md}\n  {html_page}{desktop_note}")
 
 
 if __name__ == "__main__":

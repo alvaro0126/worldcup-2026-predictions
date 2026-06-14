@@ -12,6 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
 OUTPUTS = ROOT / "outputs"
+DOCS = ROOT / "docs"                 # GitHub Pages site (index.html)
 RATINGS_CSV = DATA / "ratings.csv"
 FIXTURES_CSV = DATA / "fixtures.csv"
 RESULTS_CSV = DATA / "results.csv"
