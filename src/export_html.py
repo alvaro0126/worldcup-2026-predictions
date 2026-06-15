@@ -475,7 +475,7 @@ def _table_section(bm: BayesModel, grecs: list[Rec], krecs: list[Rec]) -> str:
     return f"""
 <section id="all"><div class="wrap reveal">
   <div class="sec-head"><span class="n">05</span><h2>All 104 matches</h2></div>
-  <p class="dek">Every recommended scoreline, searchable. Win, draw and loss probabilities are the three-part bar (claret, grey, gold). Knockout pairings are projected.</p>
+  <p class="dek">Every recommended scoreline, searchable. Each is chosen to maximise expected points under a typical pool's scoring, which rewards the right winner and the right goal difference, so favourites get a decisive score rather than a 1-1. Win, draw and loss probabilities are the three-part bar (claret, grey, gold). Knockout pairings are projected.</p>
   <div class="controls">
     <input id="q" type="search" placeholder="Search team or round..." aria-label="Search matches">
     <div class="fbtns">

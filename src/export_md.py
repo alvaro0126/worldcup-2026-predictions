@@ -10,28 +10,19 @@ from .metrics import Validation
 
 
 def _line(r: Rec) -> str:
-    modal = f"{r.rec_home}-{r.rec_away}"
-    backup = f"{r.alt_home}-{r.alt_away}"
-    pick_team = {"H": r.home, "D": "draw", "A": r.away}[r.best_outcome]
+    score = f"{r.rec_home}-{r.rec_away}"
     head = f"- **{r.date}** — {r.home} vs {r.away} → "
-
     if r.status == "final":
-        return head + f"**{modal}**  `[PLAYED — final result]`"
+        return head + f"**{score}**  `[PLAYED — final result]`"
     if r.status == "in_progress":
         live = f"{r.actual_home}-{r.actual_away}"
-        return head + f"**{modal}**  `[LIVE {live} — not final; model pick shown]`"
-
-    # scheduled group game or projected knockout
-    modal_is_draw = r.rec_home == r.rec_away
-    if r.best_outcome == "D" or not modal_is_draw:
-        suffix = "" if r.best_outcome == "D" else f" ({pick_team})"
-        score = f"**{modal}**{suffix}"
-    else:
-        # closest single score is a draw but a side is favoured -> offer a decisive backup
-        score = f"**{modal}** _(if decisive: {backup} {pick_team})_"
+        return head + f"**{score}**  `[LIVE {live} — not final]`"
+    # scheduled or projected: the points-maximising pick (winner implied by the score)
+    side = r.home if r.rec_home > r.rec_away else (r.away if r.rec_home < r.rec_away else "draw")
+    out = head + f"**{score}** ({side})"
     if r.status == "projected":
-        score += f"  `[projected matchup {r.matchup_prob:.0%}]`"
-    return head + score
+        out += f"  `[projected matchup {r.matchup_prob:.0%}]`"
+    return out
 
 
 def build(path, group_recs: list[Rec], ko_recs: list[Rec],
@@ -39,9 +30,9 @@ def build(path, group_recs: list[Rec], ko_recs: list[Rec],
     L: list[str] = []
     L.append("# World Cup 2026 — Recommended Scores")
     L.append("")
-    L.append(f"*Generated {generated} · Dixon-Coles Poisson model + Bayesian daily "
-             f"update · {n_sims:,} simulations · pre-tournament hold-out RPS "
-             f"{val.mean_rps:.3f}, outcome hit-rate {val.outcome_hit_rate:.0%}.*")
+    L.append(f"*Generated {generated} · Dixon-Coles Poisson + Bayesian update · "
+             f"{n_sims:,} sims · each score maximises expected Bodytech points "
+             f"(140 exact / 100 winner+diff / 70 winner or draw).*")
     L.append("")
     L.append("## Instructions for Claude (in Chrome)")
     L.append("")
@@ -55,8 +46,9 @@ def build(path, group_recs: list[Rec], ko_recs: list[Rec],
     L.append("- `[PROJECTED matchup ..%]` knockout games use the **most-likely teams** for that "
              "slot; **confirm the real matchup on the site** before entering, since the bracket "
              "isn't set yet. The % is how often that exact pairing occurred in simulation.")
-    L.append("- The exact score is the single most-likely scoreline; '(pick: …)' is the "
-             "most-likely match result if the pool also scores that.")
+    L.append("- Each score is the one that **maximises expected Bodytech points** over the "
+             "model's full probability distribution, so favourites get a decisive scoreline "
+             "instead of 1-1. The team in parentheses is the predicted winner.")
     L.append("")
     L.append("---")
     L.append("")

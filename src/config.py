@@ -26,6 +26,17 @@ DESKTOP_MD = DESKTOP / "world_cup_2026_picks.md"
 # Model hyper-parameters
 # --------------------------------------------------------------------------- #
 MAX_GOALS = 10            # truncate the score matrix at 10-10 (prob mass beyond is ~0)
+
+# Bodytech "Polla Mundialista" scoring (mundialista.bodytech.com.co).
+# Points are awarded on the 90-minute result of each match.
+POOL_POINTS = {
+    "exact": 140,         # exact scoreline
+    "winner_diff": 100,   # right winner AND right goal difference (not exact)
+    "winner_only": 70,    # right winner, wrong margin
+    "draw": 70,           # right that it's a draw, wrong score
+    "miss": 0,            # wrong outcome
+}
+POOL_PRED_MAX_GOALS = 6   # search candidate predictions 0-0 .. 6-6 when optimising
 HOST_ELO_BONUS = 80.0     # Elo points a host nation gains when playing in its own country
 PRIOR_SIGMA = 0.20        # SD of the Normal prior on each team's log attack / defence
                           # (how far in-tournament form may pull a team off its Elo prior)
