@@ -1,6 +1,6 @@
 # World Cup 2026 — Recommended Scores
 
-*Generated 2026-06-14 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
+*Generated 2026-06-15 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
 
 ## Instructions for Claude (in Chrome)
 
@@ -57,11 +57,11 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 
 ### Group F
 - **2026-06-14** — Netherlands vs Japan → **2-2**  `[PLAYED — final result]`
-- **2026-06-14** — Sweden vs Tunisia → **0-1** (Tunisia)
-- **2026-06-20** — Netherlands vs Sweden → **1-0** (Netherlands)
-- **2026-06-20** — Tunisia vs Japan → **0-1** (Japan)
-- **2026-06-25** — Japan vs Sweden → **1-0** (Japan)
-- **2026-06-25** — Tunisia vs Netherlands → **0-1** (Netherlands)
+- **2026-06-14** — Sweden vs Tunisia → **5-1**  `[PLAYED — final result]`
+- **2026-06-20** — Netherlands vs Sweden → **2-1** (Netherlands)
+- **2026-06-20** — Tunisia vs Japan → **1-2** (Japan)
+- **2026-06-25** — Japan vs Sweden → **2-1** (Japan)
+- **2026-06-25** — Tunisia vs Netherlands → **1-2** (Netherlands)
 
 ### Group G
 - **2026-06-15** — Belgium vs Egypt → **1-0** (Belgium)
@@ -114,38 +114,38 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 ## Knockout stage — projected matchups (verify before entering)
 
 ### Round of 32
-- **2026-06-28/07-03** — South Korea vs Canada → **0-1** (Canada)  `[projected matchup 12%]`
+- **2026-06-28/07-03** — South Korea vs Switzerland → **0-1** (Switzerland)  `[projected matchup 12%]`
 - **2026-06-28/07-03** — Germany vs Turkey → **2-1** (Germany)  `[projected matchup 7%]`
-- **2026-06-28/07-03** — Netherlands vs Brazil → **0-1** (Brazil)  `[projected matchup 12%]`
+- **2026-06-28/07-03** — Sweden vs Brazil → **0-1** (Brazil)  `[projected matchup 12%]`
 - **2026-06-28/07-03** — Scotland vs Japan → **0-1** (Japan)  `[projected matchup 12%]`
 - **2026-06-28/07-03** — France vs Turkey → **1-0** (France)  `[projected matchup 4%]`
-- **2026-06-28/07-03** — Ivory Coast vs Norway → **0-1** (Norway)  `[projected matchup 15%]`
+- **2026-06-28/07-03** — Ivory Coast vs Norway → **0-1** (Norway)  `[projected matchup 14%]`
 - **2026-06-28/07-03** — Mexico vs Ecuador → **0-1** (Ecuador)  `[projected matchup 9%]`
 - **2026-06-28/07-03** — England vs Uzbekistan → **1-0** (England)  `[projected matchup 10%]`
-- **2026-06-28/07-03** — United States vs Qatar → **1-0** (United States)  `[projected matchup 7%]`
+- **2026-06-28/07-03** — United States vs Qatar → **1-0** (United States)  `[projected matchup 8%]`
 - **2026-06-28/07-03** — Belgium vs Czechia → **1-0** (Belgium)  `[projected matchup 8%]`
-- **2026-06-28/07-03** — Portugal vs Croatia → **1-0** (Portugal)  `[projected matchup 10%]`
-- **2026-06-28/07-03** — Spain vs Algeria → **1-0** (Spain)  `[projected matchup 17%]`
-- **2026-06-28/07-03** — Canada vs Egypt → **1-0** (Canada)  `[projected matchup 4%]`
-- **2026-06-28/07-03** — Argentina vs Uruguay → **1-0** (Argentina)  `[projected matchup 20%]`
+- **2026-06-28/07-03** — Colombia vs Croatia → **1-0** (Colombia)  `[projected matchup 10%]`
+- **2026-06-28/07-03** — Spain vs Austria → **1-0** (Spain)  `[projected matchup 17%]`
+- **2026-06-28/07-03** — Canada vs Iran → **0-1** (Iran)  `[projected matchup 4%]`
+- **2026-06-28/07-03** — Argentina vs Uruguay → **1-0** (Argentina)  `[projected matchup 19%]`
 - **2026-06-28/07-03** — Portugal vs Panama → **1-0** (Portugal)  `[projected matchup 8%]`
-- **2026-06-28/07-03** — Australia vs Iran → **1-0** (Australia)  `[projected matchup 12%]`
+- **2026-06-28/07-03** — Australia vs Belgium → **0-1** (Belgium)  `[projected matchup 12%]`
 
 ### Round of 16
 - **2026-07-04/07-07** — Germany vs France → **1-2** (France)  `[projected matchup 14%]`
 - **2026-07-04/07-07** — South Korea vs Netherlands → **0-1** (Netherlands)  `[projected matchup 5%]`
 - **2026-07-04/07-07** — Brazil vs Ivory Coast → **1-0** (Brazil)  `[projected matchup 4%]`
 - **2026-07-04/07-07** — Mexico vs England → **0-1** (England)  `[projected matchup 11%]`
-- **2026-07-04/07-07** — Portugal vs Spain → **0-1** (Spain)  `[projected matchup 8%]`
+- **2026-07-04/07-07** — Colombia vs Spain → **0-1** (Spain)  `[projected matchup 8%]`
 - **2026-07-04/07-07** — United States vs Belgium → **0-1** (Belgium)  `[projected matchup 8%]`
 - **2026-07-04/07-07** — Argentina vs Australia → **1-0** (Argentina)  `[projected matchup 8%]`
 - **2026-07-04/07-07** — Canada vs Portugal → **0-1** (Portugal)  `[projected matchup 5%]`
 
 ### Quarter-final
 - **2026-07-09/07-11** — Germany vs Netherlands → **2-1** (Germany)  `[projected matchup 3%]`
-- **2026-07-09/07-11** — Spain vs United States → **1-0** (Spain)  `[projected matchup 6%]`
+- **2026-07-09/07-11** — Spain vs United States → **1-0** (Spain)  `[projected matchup 5%]`
 - **2026-07-09/07-11** — Brazil vs England → **0-1** (England)  `[projected matchup 2%]`
-- **2026-07-09/07-11** — Argentina vs Colombia → **1-0** (Argentina)  `[projected matchup 5%]`
+- **2026-07-09/07-11** — Argentina vs Portugal → **1-0** (Argentina)  `[projected matchup 5%]`
 
 ### Semi-final
 - **2026-07-14/07-15** — Germany vs Spain → **1-2** (Spain)  `[projected matchup 3%]`
