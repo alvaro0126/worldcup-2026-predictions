@@ -463,19 +463,21 @@ def _table_section(bm: BayesModel, grecs: list[Rec], krecs: list[Rec]) -> str:
         tag = (f'<span class="tag played">played</span>' if status == "played" else
                f'<span class="tag projected">proj</span>' if status == "projected" else
                f'<span class="tag">live</span>' if status == "live" else '<span class="tag">sched</span>')
+        ev_disp = "" if status == "played" else f"{round(r.ev)}"
         rows.append(
             f'<tr data-t="{_e(search)}" data-r="{rnd}">'
             f'<td style="color:var(--ink-3)" class="mono">{_e(r.date[5:] if r.rnd=="Group" else label[:6])}</td>'
             f'<td><span class="tm-cell" style="display:inline">{_e(r.home)}</span></td>'
             f'<td class="scbig">{r.rec_home}-{r.rec_away}</td>'
             f'<td>{_e(r.away)}</td>'
+            f'<td class="mono" style="color:var(--ink-2)">{ev_disp}</td>'
             f'<td><span class="wdl" title="W {r.p_home*100:.0f}% / D {r.p_draw*100:.0f}% / L {r.p_away*100:.0f}%">'
             f'<i class="w" style="width:{w:.1f}px"></i><i class="d" style="width:{dd:.1f}px"></i><i class="a" style="width:{a:.1f}px"></i></span></td>'
             f'<td>{tag}</td></tr>')
     return f"""
 <section id="all"><div class="wrap reveal">
   <div class="sec-head"><span class="n">05</span><h2>All 104 matches</h2></div>
-  <p class="dek">Every recommended scoreline, searchable. Each is chosen to maximise expected points under a typical pool's scoring, which rewards the right winner and the right goal difference, so favourites get a decisive score rather than a 1-1. Win, draw and loss probabilities are the three-part bar (claret, grey, gold). Knockout pairings are projected.</p>
+  <p class="dek">Every recommended scoreline, searchable. Each is chosen to maximise expected points under a typical pool's scoring, which rewards the right winner and the right goal difference, so favourites get a decisive score rather than a 1-1. "Exp pts" is the average points that pick earns. Win, draw and loss probabilities are the three-part bar (claret, grey, gold). Knockout pairings are projected.</p>
   <div class="controls">
     <input id="q" type="search" placeholder="Search team or round..." aria-label="Search matches">
     <div class="fbtns">
@@ -485,7 +487,7 @@ def _table_section(bm: BayesModel, grecs: list[Rec], krecs: list[Rec]) -> str:
     </div>
   </div>
   <div class="tablewrap"><table class="full" id="fulltable">
-    <thead><tr><th>When</th><th>Home</th><th>Score</th><th>Away</th><th>W / D / L</th><th>Status</th></tr></thead>
+    <thead><tr><th>When</th><th>Home</th><th>Score</th><th>Away</th><th>Exp pts</th><th>W / D / L</th><th>Status</th></tr></thead>
     <tbody>{''.join(rows)}</tbody></table></div>
   <div class="legend"><span><i style="background:var(--accent)"></i>Home win</span><span><i style="background:var(--draw)"></i>Draw</span><span><i style="background:var(--gold)"></i>Away win</span></div>
 </div></section>"""
