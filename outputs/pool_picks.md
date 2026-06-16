@@ -1,6 +1,6 @@
 # World Cup 2026 — Recommended Scores
 
-*Generated 2026-06-15 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
+*Generated 2026-06-16 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
 
 ## Instructions for Claude (in Chrome)
 
@@ -64,16 +64,16 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 - **2026-06-25** — Tunisia vs Netherlands → **1-2** (Netherlands)
 
 ### Group G
-- **2026-06-15** — Belgium vs Egypt → **1-0** (Belgium)
-- **2026-06-15** — Iran vs New Zealand → **1-0** (Iran)
+- **2026-06-15** — Belgium vs Egypt → **1-1**  `[PLAYED — final result]`
+- **2026-06-15** — Iran vs New Zealand → **2-2**  `[PLAYED — final result]`
 - **2026-06-21** — Belgium vs Iran → **1-0** (Belgium)
 - **2026-06-21** — New Zealand vs Egypt → **0-1** (Egypt)
 - **2026-06-26** — Egypt vs Iran → **0-1** (Iran)
 - **2026-06-26** — New Zealand vs Belgium → **0-1** (Belgium)
 
 ### Group H
-- **2026-06-15** — Saudi Arabia vs Uruguay → **0-1** (Uruguay)
-- **2026-06-15** — Spain vs Cape Verde → **2-0** (Spain)
+- **2026-06-15** — Saudi Arabia vs Uruguay → **1-1**  `[PLAYED — final result]`
+- **2026-06-15** — Spain vs Cape Verde → **0-0**  `[PLAYED — final result]`
 - **2026-06-21** — Spain vs Saudi Arabia → **2-0** (Spain)
 - **2026-06-21** — Uruguay vs Cape Verde → **1-0** (Uruguay)
 - **2026-06-26** — Cape Verde vs Saudi Arabia → **1-0** (Cape Verde)
@@ -125,30 +125,30 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 - **2026-06-28/07-03** — United States vs Qatar → **1-0** (United States)  `[projected matchup 8%]`
 - **2026-06-28/07-03** — Belgium vs Czechia → **1-0** (Belgium)  `[projected matchup 8%]`
 - **2026-06-28/07-03** — Colombia vs Croatia → **1-0** (Colombia)  `[projected matchup 10%]`
-- **2026-06-28/07-03** — Spain vs Austria → **1-0** (Spain)  `[projected matchup 17%]`
-- **2026-06-28/07-03** — Canada vs Iran → **0-1** (Iran)  `[projected matchup 4%]`
-- **2026-06-28/07-03** — Argentina vs Uruguay → **1-0** (Argentina)  `[projected matchup 19%]`
+- **2026-06-28/07-03** — Spain vs Austria → **1-0** (Spain)  `[projected matchup 14%]`
+- **2026-06-28/07-03** — Canada vs Egypt → **1-0** (Canada)  `[projected matchup 4%]`
+- **2026-06-28/07-03** — Argentina vs Cape Verde → **1-0** (Argentina)  `[projected matchup 15%]`
 - **2026-06-28/07-03** — Portugal vs Panama → **1-0** (Portugal)  `[projected matchup 8%]`
-- **2026-06-28/07-03** — Australia vs Belgium → **0-1** (Belgium)  `[projected matchup 12%]`
+- **2026-06-28/07-03** — Australia vs Egypt → **1-0** (Australia)  `[projected matchup 12%]`
 
 ### Round of 16
 - **2026-07-04/07-07** — Germany vs France → **1-2** (France)  `[projected matchup 14%]`
 - **2026-07-04/07-07** — South Korea vs Netherlands → **0-1** (Netherlands)  `[projected matchup 5%]`
 - **2026-07-04/07-07** — Brazil vs Ivory Coast → **1-0** (Brazil)  `[projected matchup 4%]`
 - **2026-07-04/07-07** — Mexico vs England → **0-1** (England)  `[projected matchup 11%]`
-- **2026-07-04/07-07** — Colombia vs Spain → **0-1** (Spain)  `[projected matchup 8%]`
-- **2026-07-04/07-07** — United States vs Belgium → **0-1** (Belgium)  `[projected matchup 8%]`
+- **2026-07-04/07-07** — Colombia vs Spain → **0-1** (Spain)  `[projected matchup 7%]`
+- **2026-07-04/07-07** — United States vs Belgium → **0-1** (Belgium)  `[projected matchup 7%]`
 - **2026-07-04/07-07** — Argentina vs Australia → **1-0** (Argentina)  `[projected matchup 8%]`
 - **2026-07-04/07-07** — Canada vs Portugal → **0-1** (Portugal)  `[projected matchup 5%]`
 
 ### Quarter-final
-- **2026-07-09/07-11** — Germany vs Netherlands → **2-1** (Germany)  `[projected matchup 3%]`
-- **2026-07-09/07-11** — Spain vs United States → **1-0** (Spain)  `[projected matchup 5%]`
+- **2026-07-09/07-11** — Germany vs Brazil → **2-1** (Germany)  `[projected matchup 3%]`
+- **2026-07-09/07-11** — Spain vs United States → **1-0** (Spain)  `[projected matchup 4%]`
 - **2026-07-09/07-11** — Brazil vs England → **0-1** (England)  `[projected matchup 2%]`
 - **2026-07-09/07-11** — Argentina vs Portugal → **1-0** (Argentina)  `[projected matchup 5%]`
 
 ### Semi-final
-- **2026-07-14/07-15** — Germany vs Spain → **1-2** (Spain)  `[projected matchup 3%]`
+- **2026-07-14/07-15** — Germany vs Spain → **0-1** (Spain)  `[projected matchup 3%]`
 - **2026-07-14/07-15** — England vs Argentina → **0-1** (Argentina)  `[projected matchup 2%]`
 
 ### Third-place
