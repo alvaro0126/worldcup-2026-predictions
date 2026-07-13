@@ -1,6 +1,6 @@
 # World Cup 2026 — Recommended Scores
 
-*Generated 2026-07-10 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
+*Generated 2026-07-13 · Dixon-Coles Poisson + Bayesian update · 50,000 sims · each score maximises expected Bodytech points (140 exact / 100 winner+diff / 70 winner or draw).*
 
 ## Instructions for Claude (in Chrome)
 
@@ -132,9 +132,9 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 - **2026-06-28/07-03** — Australia vs Egypt → **0-1** (Egypt)  `[projected matchup 100%]`
 
 ### Round of 16
-- **2026-07-04/07-07** — Germany vs France → **1-2** (France)  `[projected matchup 54%]`
+- **2026-07-04/07-07** — Germany vs France → **1-2** (France)  `[projected matchup 55%]`
 - **2026-07-04/07-07** — Canada vs Netherlands → **1-2** (Netherlands)  `[projected matchup 36%]`
-- **2026-07-04/07-07** — Brazil vs Norway → **2-1** (Brazil)  `[projected matchup 32%]`
+- **2026-07-04/07-07** — Brazil vs Norway → **2-1** (Brazil)  `[projected matchup 33%]`
 - **2026-07-04/07-07** — Mexico vs England → **0-1** (England)  `[projected matchup 41%]`
 - **2026-07-04/07-07** — Portugal vs Spain → **0-1** (Spain)  `[projected matchup 45%]`
 - **2026-07-04/07-07** — United States vs Belgium → **1-2** (Belgium)  `[projected matchup 43%]`
@@ -149,10 +149,10 @@ Fill the prediction pool by entering the **bold score** after each arrow for the
 
 ### Semi-final
 - **2026-07-14/07-15** — France vs Spain → **0-1** (Spain)  `[projected matchup 13%]`
-- **2026-07-14/07-15** — England vs Argentina → **1-2** (Argentina)  `[projected matchup 11%]`
+- **2026-07-14/07-15** — England vs Argentina → **1-2** (Argentina)  `[projected matchup 12%]`
 
 ### Third-place
-- **2026-07-18** — Spain vs Argentina → **1-0** (Spain)  `[projected matchup 2%]`
+- **2026-07-18** — France vs Argentina → **0-1** (Argentina)  `[projected matchup 2%]`
 
 ### Final
 - **2026-07-19** — Spain vs Argentina → **1-0** (Spain)  `[projected matchup 6%]`
